@@ -1,6 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
-  moduleFormat="cjs"
+  provider     = "prisma-client-js"
+  moduleFormat = "cjs"
 }
 
 datasource db {
@@ -20,7 +20,7 @@ model User {
 }
 
 model Request {
-  id                String         @unique
+  id                String         @id @default(uuid())
   name              String
   field             String
   status_id         String

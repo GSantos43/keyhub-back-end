@@ -21,6 +21,8 @@ CREATE TABLE "Request" (
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "requester_user_id" TEXT NOT NULL,
     "request_FieldId" TEXT
+    
+    CONSTRAINT "Request_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
