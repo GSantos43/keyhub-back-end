@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import * as ConfigEnv from '@nestjs/config';
 import { RequestsModule } from './module/requests/requests.module';
 import { KeycloakConnectModule } from 'nest-keycloak-connect';
+import { ClientsModule } from './module/clients/clients.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { KeycloakConnectModule } from 'nest-keycloak-connect';
       inject: [ConfigEnv.ConfigService]
     }),
     RequestsModule,
+    ClientsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
