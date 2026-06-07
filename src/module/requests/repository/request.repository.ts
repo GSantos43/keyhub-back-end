@@ -37,6 +37,11 @@ export class RequestRepository {
           select: {
             name: true,
           }
+        },
+        client: {
+          select: {
+            name: true,
+          }
         }
        }
     })
