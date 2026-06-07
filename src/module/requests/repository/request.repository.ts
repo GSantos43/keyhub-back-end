@@ -21,7 +21,25 @@ export class RequestRepository {
   }
 
   async findAllRequest(): Promise<RequestEntity[]> {
-    return await this.prisma.request.findMany();
+    return await this.prisma.request.findMany({
+       include: {
+        requester: {
+          select: {
+            firstName: true,
+          }
+        },
+        status: {
+          select: {
+            name: true,
+          }
+        },
+        requestField: {
+          select: {
+            name: true,
+          }
+        }
+       }
+    })
   }
 
   async findOneRequest(id: string): Promise<RequestEntity> {

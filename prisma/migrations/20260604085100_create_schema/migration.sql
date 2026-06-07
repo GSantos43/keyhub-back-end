@@ -20,7 +20,7 @@ CREATE TABLE "Request" (
     "status_id" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "requester_user_id" TEXT NOT NULL,
-    "request_FieldId" TEXT
+    "request_FieldId" TEXT,
     
     CONSTRAINT "Request_pkey" PRIMARY KEY ("id")
 );

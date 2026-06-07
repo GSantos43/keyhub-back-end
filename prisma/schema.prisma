@@ -19,10 +19,21 @@ model User {
   requests  Request[]
 }
 
+model Client {
+  id       String    @id @default(uuid())
+  sub      String    @unique
+  name     String    @unique
+  badges   String[]
+  requests Request[]
+
+}
+
 model Request {
   id                String         @id @default(uuid())
   name              String
   field             String
+  client            Client?        @relation(fields: [client_request_id], references: [id])
+  client_request_id String?
   status_id         String
   status            Request_Status @relation(fields: [status_id], references: [id])
   createdAt         DateTime       @default(now())
